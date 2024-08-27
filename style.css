@@ -1,0 +1,319 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #555; /* Changed to a medium gray for better readability */
+}
+
+/* Main content wrapper */
+.main-content {
+    max-width: 1200px; /* Increased max-width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #FF8C00; /* Dark Orange */
+    margin-bottom: 20px;
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add gap between flex items */
+}
+
+.search-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #FF8C00;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 100%; /* Match height with input */
+}
+
+.search-bar button:hover {
+    background-color: #FFA500;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #FFA500;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000; /* Ensure suggestions appear above other content */
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #FFF5E6;
+}
+
+/* Shortcut styles */
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.shortcut {
+    padding: 10px 15px;
+    background-color: #FFA500; /* Orange */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shortcut:hover {
+    background-color: #FF8C00; /* Dark Orange */
+}
+
+/* Info and calculator container */
+.info-calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-box, .calculator-box {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,165,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box {
+    color: white;
+}
+
+.info-box h2, .dosage-calculator h2, .combinations-box h2 {
+    color: #FF8C00; /* Dark Orange */
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 20px 20px 0;
+    text-align: center; /* Center the text */
+}
+
+.info-box, .calculator-box, .combinations-box {
+    width: calc(33.33% - 14px);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,165,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box h2, .calculator-box h2, .combinations-box h2 {
+    color: #FF8C00; /* Dark Orange */
+    margin: 0;
+    padding: 0 0 15px 0;
+    text-align: center;
+}
+
+.dosage-calculator, #results {
+    padding: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    color: #555; /* Changed to gray */
+}
+
+.dosage-calculator p {
+    margin-top: 0;
+    color: #666;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Changed to gray */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 4px;
+    background-color: white;
+    color: #555; /* Changed to gray */
+}
+
+.dosage-calculator button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFA500; /* Orange */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+.dosage-calculator button:hover {
+    background-color: #FF8C00; /* Dark Orange */
+}
+
+#dosageResult, #results {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #FFF5E6; /* Very Light Orange */
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 4px;
+    color: #555; /* Changed to gray */
+}
+
+#dosageResult {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .info-calculator-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box, .calculator-box {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+#drugSelect {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 4px;
+    background-color: white;
+    color: #555;
+}
+
+.info-calculator-combinations-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 5%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px; /* Add gap between flex items */
+}
+
+.info-box, .calculator-box, .combinations-box {
+    width: calc(33.33% - 14px); /* Adjust width to account for gap */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,165,0,0.1);
+}
+
+.combinations-box form {
+    margin-top: 20px;
+}
+
+.combinations-box .form-group {
+    margin-bottom: 15px;
+}
+
+.combinations-box select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #FFA500; /* Orange */
+    border-radius: 4px;
+    background-color: white;
+    color: #555;
+}
+
+.combinations-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFA500; /* Orange */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.combinations-box button:hover {
+    background-color: #FF8C00; /* Darker Orange */
+}
+
+#combinationResult {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .info-calculator-combinations-container {
+        padding: 0 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-calculator-combinations-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 20px; /* Maintain gap for vertical layout */
+    }
+
+    .info-box, .calculator-box, .combinations-box {
+        width: 90%;
+        max-width: 400px;
+        margin-bottom: 0; /* Remove bottom margin as we're using gap */
+    }
+}
